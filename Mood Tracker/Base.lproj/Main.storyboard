@@ -16,14 +16,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="na5-fL-4b3">
-                            <rect key="frame" x="0.0" y="72" width="375" height="44"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" title="Button"/>
-                            <connections>
-                                <action selector="SelectFriend:" destination="cIa-jD-0Dl" eventType="touchUpInside" id="jIk-YA-Oyx"/>
-                            </connections>
-                        </button>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="friendsCell" rowHeight="44" id="Q4H-TN-7aP">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
@@ -42,11 +34,13 @@
                     <navigationItem key="navigationItem" id="HT1-s5-2bj">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="9Pr-cn-rHu">
                             <connections>
-                                <action selector="addPressed:" destination="cIa-jD-0Dl" id="qLU-At-tqH"/>
+                                <action selector="addNewFriend:" destination="cIa-jD-0Dl" id="nh4-Nd-anM"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="didPressFriend" destination="Q4H-TN-7aP" id="Tfb-zP-tTv"/>
+                        <outlet property="guessedFriend" destination="aGF-Oy-gME" id="HNm-fE-cti"/>
                         <segue destination="p6y-mr-q7T" kind="show" identifier="moodSegue" id="ufi-E0-iaI"/>
                     </connections>
                 </tableViewController>

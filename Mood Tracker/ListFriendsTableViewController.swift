@@ -36,6 +36,9 @@ class ListFriendsTableViewController: UITableViewController {
         
     ]
     
+    @IBOutlet var guessedFriend: UITableView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -101,5 +104,14 @@ class ListFriendsTableViewController: UITableViewController {
         
     }
     
-
+    
+    @IBAction func addNewFriend(_ sender: Any) {
+        
+    }
+    
+    @IBAction func didPressFriend(_ sender: Any) {
+        
+        chooseMoodTableViewController()
+    }
+    
 }
