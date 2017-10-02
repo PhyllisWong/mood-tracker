@@ -21,6 +21,10 @@ enum Mood: String {
 }
 
 class ListFriendsTableViewController: UITableViewController {
+    //func didSelectFriend(friend: Friend) {
+        //self.selectedFriend = friend
+    //}
+    
 
     var friends: [Friend] = [
         Friend(name: "Ross", mood: nil),

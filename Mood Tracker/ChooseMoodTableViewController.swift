@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol FriendSelectorDelegate: class {
+    func didSelectFriend(friend: Friend)
+}
+
 class ChooseMoodTableViewController: UITableViewController {
 
     let moods: [Mood] = [
@@ -18,6 +22,7 @@ class ChooseMoodTableViewController: UITableViewController {
     ]
     
     var selectedFriend: Friend?
+    weak var delegate: FriendSelectorDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,6 +55,7 @@ class ChooseMoodTableViewController: UITableViewController {
         let selectedMood = moods[indexPath.row]
         
         selectedFriend?.mood = selectedMood
+        //delegate?.didSelectMood(mood: Mood)
         
     }
  
