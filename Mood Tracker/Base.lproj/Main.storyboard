@@ -17,13 +17,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="friendsCell" rowHeight="44" id="Q4H-TN-7aP">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="friendsCell" rowHeight="44" id="Q4H-TN-7aP" customClass="ListFriendTableViewCell" customModule="Mood_Tracker" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Q4H-TN-7aP" id="JWb-z9-W0g">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="friendCellView" destination="JWb-z9-W0g" id="tBt-Lj-e5g"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -39,8 +42,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="didPressFriend" destination="Q4H-TN-7aP" id="Tfb-zP-tTv"/>
-                        <outlet property="guessedFriend" destination="aGF-Oy-gME" id="HNm-fE-cti"/>
                         <segue destination="p6y-mr-q7T" kind="show" identifier="moodSegue" id="ufi-E0-iaI"/>
                     </connections>
                 </tableViewController>

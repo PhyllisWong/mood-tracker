@@ -9,7 +9,7 @@
 import UIKit
 
 protocol FriendSelectorDelegate: class {
-    func didSelectFriend(friend: Friend)
+    func didSelectFriend(friend: Friend, indexPath: IndexPath)
 }
 
 class ChooseMoodTableViewController: UITableViewController {
@@ -22,11 +22,11 @@ class ChooseMoodTableViewController: UITableViewController {
     ]
     
     var selectedFriend: Friend?
-    weak var delegate: FriendSelectorDelegate?
+    var selectedRow: Int?
+    weak var delegate: FriendSelectorDelegate? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
 
     // MARK: - Table view data source
@@ -42,22 +42,16 @@ class ChooseMoodTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: "moodsCell", for: indexPath)
-
         cell.textLabel?.text = moods[indexPath.row].rawValue
-
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         let selectedMood = moods[indexPath.row]
-        
-        selectedFriend?.mood = selectedMood
-        //delegate?.didSelectMood(mood: Mood)
-        
+        guard var selectedFriend = selectedFriend else {return}
+        selectedFriend.mood = selectedMood
+        delegate?.didSelectFriend(friend: selectedFriend, indexPath: indexPath)
+        navigationController?.popToRootViewController(animated: true)
     }
- 
-
 }

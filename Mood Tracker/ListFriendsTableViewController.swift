@@ -20,11 +20,13 @@ enum Mood: String {
     case angry = "😡"
 }
 
-class ListFriendsTableViewController: UITableViewController {
-    //func didSelectFriend(friend: Friend) {
-        //self.selectedFriend = friend
-    //}
+class ListFriendsTableViewController: UITableViewController, FriendSelectorDelegate {
     
+    func didSelectFriend(friend: Friend, indexPath: IndexPath) {
+        guard let mood = friend.mood else {return}
+        friends[selectedFriend].mood = mood
+        tableView.reloadData()
+    }
 
     var friends: [Friend] = [
         Friend(name: "Ross", mood: nil),
@@ -37,8 +39,13 @@ class ListFriendsTableViewController: UITableViewController {
     ]
     
     @IBOutlet var guessedFriend: UITableView!
+    var  selectedFriend: Int!
+    
+    // button to select friend
+    // when pressed, goes to the moods view controller
     
     
+   
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -55,63 +62,36 @@ class ListFriendsTableViewController: UITableViewController {
         return friends.count
     }
 
-    // button to select friend
-    @IBAction func SelectFriend(_ sender: Any) {
-        // when pressed, goes to the moods view controller
-        
-    }
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: "friendsCell", for: indexPath)
-
         let friend = friends[indexPath.row]
-        
-        
         cell.textLabel?.text = "\(friend.name) \(friend.mood?.rawValue ?? "")"
-
         return cell
-    }
-    
-    @IBAction func addPressed(_ sender: Any) {
-        
-        // Add your friend here
     }
     
     // Tableview delegate
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         let selectedFriend = friends[indexPath.row]
-        
-        goToMoodChooserViewController(selectedFriend: selectedFriend)
+        let selectedRow = indexPath.row
+        goToMoodChooserViewController(selectedFriend: selectedFriend, selectedRow: selectedRow)
         
     }
     
-    func goToMoodChooserViewController(selectedFriend: Friend) {
-        
+    func goToMoodChooserViewController(selectedFriend: Friend, selectedRow: Int) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        
         guard let chooseMoodTableViewController = storyboard.instantiateViewController(withIdentifier: "ChooseMoodTableViewController") as? ChooseMoodTableViewController
             else {return}
-        
+        self.selectedFriend = selectedRow
         
         chooseMoodTableViewController.selectedFriend = selectedFriend
+        chooseMoodTableViewController.selectedRow = selectedRow
+        chooseMoodTableViewController.delegate = self 
         
         // TODO: Make sure to set the delegate on the ChooseMoodTableViewController
-     
-        
+
     self.navigationController?.pushViewController(chooseMoodTableViewController, animated: true)
         
     }
-    
-    
-    @IBAction func addNewFriend(_ sender: Any) {
-        
-    }
-    
-    @IBAction func didPressFriend(_ sender: Any) {
-        
-        chooseMoodTableViewController()
-    }
+
     
 }
