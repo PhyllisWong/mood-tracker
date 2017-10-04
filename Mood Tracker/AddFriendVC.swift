@@ -19,7 +19,11 @@ class AddFriendVC: UIViewController {
     @IBOutlet weak var addFriendTF: UITextField!
     
     @IBAction func didPressSend(_ sender: Any) {
-        guard let data = addFriendTF.text else {return}
+        
+        guard let data = addFriendTF.text else {
+            
+            return
+        }
         delegate?.userDidEnterData(data: data)
         dismiss(animated: true, completion: nil)
     }

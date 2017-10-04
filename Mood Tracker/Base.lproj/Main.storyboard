@@ -86,7 +86,7 @@
         <!--Add FriendVC-->
         <scene sceneID="GCO-k1-phj">
             <objects>
-                <viewController id="H7h-ZZ-ZPm" customClass="AddFriendVC" sceneMemberID="viewController">
+                <viewController id="H7h-ZZ-ZPm" customClass="AddFriendVC" customModule="Mood_Tracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gWc-IV-VMU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

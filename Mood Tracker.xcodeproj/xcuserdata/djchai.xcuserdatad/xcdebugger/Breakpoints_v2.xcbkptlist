@@ -42,13 +42,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Mood Tracker/ListFriendsTableViewController.swift"
-            timestampString = "528770532.109028"
+            timestampString = "528836515.960177"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "40"
             endingLineNumber = "40"
-            landmarkName = "friends"
-            landmarkType = "24">
+            landmarkName = "didSelectFriend(friend:indexPath:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -58,13 +58,29 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Mood Tracker/ListFriendsTableViewController.swift"
-            timestampString = "528770532.109427"
+            timestampString = "528836515.960307"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "41"
             endingLineNumber = "41"
-            landmarkName = "friends"
-            landmarkType = "24">
+            landmarkName = "didSelectFriend(friend:indexPath:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Mood Tracker/AddFriendVC.swift"
+            timestampString = "528836596.271382"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "didPressSend(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

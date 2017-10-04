@@ -27,13 +27,13 @@ class ListFriendsTableViewController: UITableViewController, FriendSelectorDeleg
         Friend(name: "Rachel", mood: nil)
     ]
     // Instantiate new friend, store String as Friend.name
-    
-    
     func userDidEnterData(data: String) {
         let newFriend = Friend(name: data, mood: nil)
         friends.append(newFriend)
         tableView.reloadData()
+        print(friends)
     }
+    
     
     func didSelectFriend(friend: Friend, indexPath: IndexPath) {
         guard let mood = friend.mood else {return}
