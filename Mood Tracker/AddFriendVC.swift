@@ -17,13 +17,10 @@ class AddFriendVC: UIViewController {
     var delegate: DataSentDelegate? = nil
 
     @IBOutlet weak var addFriendTF: UITextField!
-    
     @IBAction func didPressSend(_ sender: Any) {
         
-        guard let data = addFriendTF.text else {
-            
-            return
-        }
+        guard let data = addFriendTF.text else {return}
+        
         delegate?.userDidEnterData(data: data)
         self.navigationController?.popViewController(animated: true)
 //        dismiss(animated: true, completion: nil)
@@ -31,7 +28,6 @@ class AddFriendVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
 
 }

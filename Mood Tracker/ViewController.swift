@@ -8,6 +8,7 @@
 
 import UIKit
 
+// This is set up as the navigation controller
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
