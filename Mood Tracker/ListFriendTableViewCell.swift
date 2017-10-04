@@ -11,6 +11,8 @@ import UIKit
 class ListFriendTableViewCell: UITableViewCell {
 
     @IBOutlet weak var friendCellView: UIView!
+    @IBOutlet weak var friendLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

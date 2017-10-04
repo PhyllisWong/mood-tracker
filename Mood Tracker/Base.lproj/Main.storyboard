@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -21,7 +22,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="aGF-Oy-gME">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="friendsCell" rowHeight="44" id="Q4H-TN-7aP" customClass="ListFriendTableViewCell" customModule="Mood_Tracker" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
@@ -29,6 +30,7 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Q4H-TN-7aP" id="JWb-z9-W0g">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="friendCellView" destination="JWb-z9-W0g" id="tBt-Lj-e5g"/>
@@ -53,7 +55,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HpL-WR-QIO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="62" y="125"/>
+            <point key="canvasLocation" x="61.600000000000001" y="124.58770614692655"/>
         </scene>
         <!--Choose Mood Table View Controller-->
         <scene sceneID="cMt-Y9-u7f">
@@ -81,7 +83,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jp8-9N-Xa1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="815.20000000000005" y="124.58770614692655"/>
+            <point key="canvasLocation" x="826" y="125"/>
         </scene>
         <!--Add FriendVC-->
         <scene sceneID="GCO-k1-phj">
@@ -114,15 +116,24 @@
                                     <action selector="didPressSend:" destination="H7h-ZZ-ZPm" eventType="touchUpInside" id="h3f-Hh-DXy"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="D1F-CG-yKt">
+                                <rect key="frame" x="70" y="286" width="235" height="132"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="D1F-CG-yKt" secondAttribute="height" multiplier="16:9" id="TCk-JA-kOM"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="2CY-gl-ps0" firstAttribute="top" secondItem="K0A-jN-rIf" secondAttribute="top" constant="20" id="3i2-7H-B2s"/>
                             <constraint firstItem="2CY-gl-ps0" firstAttribute="leading" secondItem="K0A-jN-rIf" secondAttribute="leading" constant="12" id="7v2-HD-HsL"/>
                             <constraint firstItem="K0A-jN-rIf" firstAttribute="trailing" secondItem="2CY-gl-ps0" secondAttribute="trailing" constant="12" id="MNO-Xo-4aM"/>
+                            <constraint firstItem="D1F-CG-yKt" firstAttribute="leading" secondItem="K0A-jN-rIf" secondAttribute="leading" constant="70" id="P3Y-S2-8eV"/>
                             <constraint firstItem="SCP-Ft-ZUA" firstAttribute="top" secondItem="2CY-gl-ps0" secondAttribute="bottom" constant="12" id="feJ-Dd-bfA"/>
                             <constraint firstItem="K0A-jN-rIf" firstAttribute="trailing" secondItem="SCP-Ft-ZUA" secondAttribute="trailing" constant="12" id="gIV-vr-bnP"/>
+                            <constraint firstItem="D1F-CG-yKt" firstAttribute="top" secondItem="SCP-Ft-ZUA" secondAttribute="bottom" constant="40" id="hSK-wh-3fB"/>
                             <constraint firstItem="SCP-Ft-ZUA" firstAttribute="leading" secondItem="K0A-jN-rIf" secondAttribute="leading" constant="12" id="iEQ-Ay-pbn"/>
+                            <constraint firstItem="K0A-jN-rIf" firstAttribute="trailing" secondItem="D1F-CG-yKt" secondAttribute="trailing" constant="70" id="mvk-ke-Our"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="K0A-jN-rIf"/>
                     </view>
@@ -153,4 +164,7 @@
             <point key="canvasLocation" x="-708" y="124"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Image" width="1200" height="629"/>
+    </resources>
 </document>
