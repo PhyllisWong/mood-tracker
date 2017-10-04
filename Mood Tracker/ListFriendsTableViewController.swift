@@ -24,7 +24,9 @@ class ListFriendsTableViewController: UITableViewController, FriendSelectorDeleg
 
     var friends: [Friend] = [
         Friend(name: "Ross", mood: nil),
-        Friend(name: "Rachel", mood: nil)
+        Friend(name: "Rachel", mood: nil),
+        Friend(name: "Monica", mood: nil),
+        Friend(name: "Phoebe", mood: nil)
     ]
     // Instantiate new friend, store String as Friend.name
     func userDidEnterData(data: String) {
