@@ -18,6 +18,11 @@ enum Mood: String {
     case neutral = "😐"
     case sad = "🙁"
     case angry = "😡"
+    case bot = "🤖"
+    case cowboy = "🤠"
+    case love = "😍"
+    case sick = "🤢"
+    case poop = "💩"
 }
 
 class ListFriendsTableViewController: UITableViewController, FriendSelectorDelegate, DataSentDelegate {
@@ -33,7 +38,7 @@ class ListFriendsTableViewController: UITableViewController, FriendSelectorDeleg
         let newFriend = Friend(name: data, mood: nil)
         friends.append(newFriend)
         tableView.reloadData()
-        print(friends)
+        //print(friends)
     }
     
     

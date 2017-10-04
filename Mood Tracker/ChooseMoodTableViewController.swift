@@ -18,7 +18,12 @@ class ChooseMoodTableViewController: UITableViewController {
         .happy,
         .neutral,
         .sad,
-        .angry
+        .angry,
+        .bot,
+        .cowboy,
+        .love,
+        .sick,
+        .poop
     ]
     
     var selectedFriend: Friend?
