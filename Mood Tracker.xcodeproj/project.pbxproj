@@ -14,6 +14,7 @@
 		B969492E1F7C5E120054AB07 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B969492C1F7C5E120054AB07 /* LaunchScreen.storyboard */; };
 		B96949391F7C5E120054AB07 /* Mood_TrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96949381F7C5E120054AB07 /* Mood_TrackerTests.swift */; };
 		B96949441F7C5E120054AB07 /* Mood_TrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96949431F7C5E120054AB07 /* Mood_TrackerUITests.swift */; };
+		B98FD6801F845B0300016988 /* AddFriendVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98FD67F1F845B0300016988 /* AddFriendVC.swift */; };
 		B99C70921F83FE5B009CD7E1 /* ListFriendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99C70911F83FE5B009CD7E1 /* ListFriendTableViewCell.swift */; };
 		B9EC54E21F7EDCCF00CB672D /* ListFriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9EC54E11F7EDCCF00CB672D /* ListFriendsTableViewController.swift */; };
 		B9EC54E41F7EE18900CB672D /* ChooseMoodTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9EC54E31F7EE18900CB672D /* ChooseMoodTableViewController.swift */; };
@@ -50,6 +51,7 @@
 		B969493F1F7C5E120054AB07 /* Mood TrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Mood TrackerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B96949431F7C5E120054AB07 /* Mood_TrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mood_TrackerUITests.swift; sourceTree = "<group>"; };
 		B96949451F7C5E120054AB07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B98FD67F1F845B0300016988 /* AddFriendVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendVC.swift; sourceTree = "<group>"; };
 		B99C70911F83FE5B009CD7E1 /* ListFriendTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListFriendTableViewCell.swift; sourceTree = "<group>"; };
 		B9EC54E11F7EDCCF00CB672D /* ListFriendsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListFriendsTableViewController.swift; sourceTree = "<group>"; };
 		B9EC54E31F7EE18900CB672D /* ChooseMoodTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseMoodTableViewController.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 				B96949251F7C5E120054AB07 /* ViewController.swift */,
 				B9EC54E31F7EE18900CB672D /* ChooseMoodTableViewController.swift */,
 				B9EC54E11F7EDCCF00CB672D /* ListFriendsTableViewController.swift */,
+				B98FD67F1F845B0300016988 /* AddFriendVC.swift */,
 				B96949271F7C5E120054AB07 /* Main.storyboard */,
 				B969492A1F7C5E120054AB07 /* Assets.xcassets */,
 				B969492C1F7C5E120054AB07 /* LaunchScreen.storyboard */,
@@ -268,6 +271,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B98FD6801F845B0300016988 /* AddFriendVC.swift in Sources */,
 				B96949261F7C5E120054AB07 /* ViewController.swift in Sources */,
 				B9EC54E41F7EE18900CB672D /* ChooseMoodTableViewController.swift in Sources */,
 				B99C70921F83FE5B009CD7E1 /* ListFriendTableViewCell.swift in Sources */,

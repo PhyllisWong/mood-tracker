@@ -5,8 +5,14 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="AvenirNext.ttc">
+            <string>AvenirNext-DemiBold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--List Friends Table View Controller-->
         <scene sceneID="LGl-Or-fVN">
@@ -37,7 +43,7 @@
                     <navigationItem key="navigationItem" id="HT1-s5-2bj">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="9Pr-cn-rHu">
                             <connections>
-                                <action selector="addNewFriend:" destination="cIa-jD-0Dl" id="nh4-Nd-anM"/>
+                                <segue destination="H7h-ZZ-ZPm" kind="show" identifier="showAddFriendVC" id="aty-IG-YIf"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -76,6 +82,57 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jp8-9N-Xa1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="815.20000000000005" y="124.58770614692655"/>
+        </scene>
+        <!--Add FriendVC-->
+        <scene sceneID="GCO-k1-phj">
+            <objects>
+                <viewController id="H7h-ZZ-ZPm" customClass="AddFriendVC" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gWc-IV-VMU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="tap to enter a friend 👇" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2CY-gl-ps0">
+                                <rect key="frame" x="12" y="84" width="351" height="90"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="Kg2-HN-wXI"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SCP-Ft-ZUA">
+                                <rect key="frame" x="12" y="186" width="351" height="60"/>
+                                <color key="backgroundColor" red="0.23529411759999999" green="0.3921568627" blue="0.85882352939999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="2Np-OO-UKe"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
+                                <state key="normal" title="SEND">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="didPressSend:" destination="H7h-ZZ-ZPm" eventType="touchUpInside" id="h3f-Hh-DXy"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2CY-gl-ps0" firstAttribute="top" secondItem="K0A-jN-rIf" secondAttribute="top" constant="20" id="3i2-7H-B2s"/>
+                            <constraint firstItem="2CY-gl-ps0" firstAttribute="leading" secondItem="K0A-jN-rIf" secondAttribute="leading" constant="12" id="7v2-HD-HsL"/>
+                            <constraint firstItem="K0A-jN-rIf" firstAttribute="trailing" secondItem="2CY-gl-ps0" secondAttribute="trailing" constant="12" id="MNO-Xo-4aM"/>
+                            <constraint firstItem="SCP-Ft-ZUA" firstAttribute="top" secondItem="2CY-gl-ps0" secondAttribute="bottom" constant="12" id="feJ-Dd-bfA"/>
+                            <constraint firstItem="K0A-jN-rIf" firstAttribute="trailing" secondItem="SCP-Ft-ZUA" secondAttribute="trailing" constant="12" id="gIV-vr-bnP"/>
+                            <constraint firstItem="SCP-Ft-ZUA" firstAttribute="leading" secondItem="K0A-jN-rIf" secondAttribute="leading" constant="12" id="iEQ-Ay-pbn"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="K0A-jN-rIf"/>
+                    </view>
+                    <connections>
+                        <outlet property="addFriendTF" destination="2CY-gl-ps0" id="dfx-rO-gX8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7fs-Uz-Pz6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="62" y="-599"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="PtB-Ms-muk">

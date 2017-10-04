@@ -20,23 +20,34 @@ enum Mood: String {
     case angry = "😡"
 }
 
-class ListFriendsTableViewController: UITableViewController, FriendSelectorDelegate {
+class ListFriendsTableViewController: UITableViewController, FriendSelectorDelegate, DataSentDelegate {
+
+    var friends: [Friend] = [
+        Friend(name: "Ross", mood: nil),
+        Friend(name: "Rachel", mood: nil)
+    ]
+    // Instantiate new friend, store String as Friend.name
+    
+    
+    func userDidEnterData(data: String) {
+        let newFriend = Friend(name: data, mood: nil)
+        friends.append(newFriend)
+        tableView.reloadData()
+    }
     
     func didSelectFriend(friend: Friend, indexPath: IndexPath) {
         guard let mood = friend.mood else {return}
         friends[selectedFriend].mood = mood
         tableView.reloadData()
     }
-
-    var friends: [Friend] = [
-        Friend(name: "Ross", mood: nil),
-        Friend(name: "Rachel", mood: nil),
-        Friend(name: "Monica", mood: nil),
-        Friend(name: "Chandler", mood: nil),
-        Friend(name: "Pheobe", mood: nil),
-        Friend(name: "Joey", mood: nil)
-        
-    ]
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showAddFriendVC" {
+            let addFriendVC: AddFriendVC = segue.destination as! AddFriendVC
+            addFriendVC.delegate = self
+        }
+    }
+    
     
     @IBOutlet var guessedFriend: UITableView!
     var  selectedFriend: Int!
@@ -92,6 +103,8 @@ class ListFriendsTableViewController: UITableViewController, FriendSelectorDeleg
     self.navigationController?.pushViewController(chooseMoodTableViewController, animated: true)
         
     }
+    
+    
 
     
 }
